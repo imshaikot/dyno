@@ -1,5 +1,6 @@
 {
   "directory": "src/components",
+  "registry": "http://bower.herokuapp.com",
   "ignoredDependencies": [
     "jquery"
   ]
