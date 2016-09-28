@@ -1,0 +1,31 @@
+{
+  "name": "vdo-dynamicx",
+  "version": "0.0.1",
+  "description": "A light-weight progressing video editor",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shariar Shaikot",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.6.1",
+    "eslint-config-airbnb-base": "^8.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-usemin": "^3.1.1"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.7",
+    "@ffprobe-installer/ffprobe": "^1.0.4",
+    "bluebird": "^3.4.6",
+    "datejs": "^1.0.0-rc3",
+    "fs-jetpack": "^0.9.2",
+    "lodash": "^4.16.2"
+  }
+}
