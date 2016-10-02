@@ -4,28 +4,30 @@
   "description": "A light-weight progressing video editor",
   "main": "main.js",
   "scripts": {
+    "build": "electron-packager build VDODynamicX --platform=darwin --arch=x64 --version=0.0.1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Shariar Shaikot",
   "license": "MIT",
   "devDependencies": {
+    "electron": "^1.4.2",
+    "electron-packager": "^8.1.0",
+    "electron-prebuilt": "^1.4.2",
     "eslint": "^3.6.1",
     "eslint-config-airbnb-base": "^8.0.0",
     "eslint-plugin-import": "^1.16.0",
     "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-htmlmin": "^2.0.0",
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "grunt-usemin": "^3.1.1"
-  },
-  "dependencies": {
-    "@ffmpeg-installer/ffmpeg": "^1.0.7",
-    "@ffprobe-installer/ffprobe": "^1.0.4",
-    "bluebird": "^3.4.6",
-    "datejs": "^1.0.0-rc3",
-    "fs-jetpack": "^0.9.2",
-    "lodash": "^4.16.2"
+    "grunt-electron": "^5.0.0",
+    "grunt-usemin": "^3.1.1",
+    "load-grunt-tasks": "^3.5.2",
+    "time-grunt": "^1.4.0"
   }
 }
