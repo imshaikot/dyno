@@ -23,7 +23,45 @@ module.exports = (grunt) => {
           `${dir.src}/index.html`,
         ]
       },
+      less: {
+        files: [`${dir.src}/stylesheets/less/*.less`],
+        tasks: ['less']
+      },
+      scripts: {
+        files: [
+          `${dir.src}/interface/*.js`,
+          `${dir.src}/interface/**/*.js`,
+          `${dir.src}/interface/**/**/*.js`,
+        ],
+        tasks: ['browserify'],
+      },
     },
+
+    browserify: {
+      dist: {
+        options: {
+          transform: [
+            ["babelify"]
+          ]
+        },
+        files: {
+          'src/.tmp/app.js': [
+            `${dir.src}/interface/*.js`,
+            `${dir.src}/interface/**/*.js`,
+            `${dir.src}/components/*.js`,]
+        }
+      }
+    },
+
+    less: {
+      all: {
+        options: {},
+        files: {
+          "./src/.tmp/app.css" : `${dir.src}/stylesheets/less/main.less`
+        }
+      }
+    },
+
     connect: {
       server: {
         options: {
@@ -71,6 +109,12 @@ module.exports = (grunt) => {
         cwd: `${dir.src}/interface`,
         src: ['*.js'],
         dest: `${dir.build}/interface`
+      },
+      tmp: {
+        expand: true,
+        cwd: `${dir.src}/.tmp`,
+        src: ['*.js'],
+        dest: `${dir.build}/.tmp`
       },
     },
     clean: {
@@ -138,6 +182,7 @@ module.exports = (grunt) => {
     'copy:main',
     'copy:packageJSON',
     'copy:app',
+    'copy:tmp',
     'useminPrepare',
     'concat:generated',
     'cssmin:generated',

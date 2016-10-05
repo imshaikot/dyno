@@ -2,6 +2,7 @@
 .idea/
 node_modules/
 src/node_modules/
+src/.tmp/
 build/
 src/components/
 vdo-dynamicx-app-darwin-x64/
