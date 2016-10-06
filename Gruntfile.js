@@ -90,6 +90,17 @@ module.exports = (grunt) => {
         }
       }
     },
+    //ngtemplates: {
+    //  dist: {
+    //    options: {
+    //      htmlmin: '<%= htmlmin.dist.options %>',
+    //      usemin: 'vendor.min.js',
+    //    },
+    //    cwd: 'src',
+    //    src: ['interface/views/{,*/}*.html'],
+    //    dest: '.tmp/templateCache.js',
+    //  },
+    //},
     copy: {
       node_modules: {
         expand: true,
@@ -114,6 +125,12 @@ module.exports = (grunt) => {
         cwd: `${dir.src}/interface`,
         src: ['*.js'],
         dest: `${dir.build}/interface`
+      },
+      views: {
+        expand: true,
+        cwd: `${dir.src}/interface/views`,
+        src: ['*.html'],
+        dest: `${dir.build}/interface/views`
       },
       tmp: {
         expand: true,
@@ -162,17 +179,18 @@ module.exports = (grunt) => {
         }
       }
     },
-    electron: {
-      osx: {
-        options: {
-          name: 'vdoDynamicX',
-          dir: dir.build,
-          out: '',
-          version: '0.0.1',
-          platform: 'darwin',
-          arch: 'x64'
+    /** Grunt:Electron tasks **/
+    exec: {
+      deploy: {
+        cmd: function() {
+          return 'npm run build';
         }
-      }
+      },
+      debug: {
+        cmd: function() {
+          return 'npm start';
+        }
+      },
     },
   });
 
@@ -181,19 +199,22 @@ module.exports = (grunt) => {
     'watch',
   ]);
 
+  const target = grunt.option('target') || 'debug';
   grunt.registerTask('build', [
     'clean:dist',
     'copy:node_modules',
     'copy:main',
     'copy:packageJSON',
-    'copy:app',
+    // 'copy:app',
     'copy:tmp',
+    'copy:views',
     'useminPrepare',
+    // 'ngtemplates',
     'concat:generated',
     'cssmin:generated',
     //'uglify:generated',
     'htmlmin',
     'usemin',
-    'electron'
+    `exec:${target}`,
   ]);
 };

@@ -3,8 +3,8 @@
  */
 function config($mdIconProvider, $mdThemingProvider, $stateProvider, $urlRouterProvider) {
   $mdThemingProvider.theme('default')
-    .primaryPalette('purple')
-    .accentPalette('deep-purple');
+    .primaryPalette('grey')
+    .accentPalette('blue-grey');
 
   $urlRouterProvider.otherwise("/");
 

@@ -4,7 +4,8 @@
   "description": "A light-weight progressing video editor",
   "main": "main.js",
   "scripts": {
-    "build": "electron-packager build VDODynamicX --platform=darwin --arch=x64 --version=0.0.1",
+    "build": "electron-packager build VdoDynamicX --platform=darwin --arch=x64 --version=1.4.2 --overwrite",
+    "start": "electron build/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Shariar Shaikot",
@@ -14,11 +15,11 @@
     "babelify": "^7.3.0",
     "electron": "^1.4.2",
     "electron-packager": "^8.1.0",
-    "electron-prebuilt": "^1.4.2",
     "eslint": "^3.6.1",
     "eslint-config-airbnb-base": "^8.0.0",
     "eslint-plugin-import": "^1.16.0",
     "grunt": "^1.0.1",
+    "grunt-angular-templates": "^1.1.0",
     "grunt-browserify": "^5.0.0",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-concat": "^1.0.1",
@@ -30,6 +31,7 @@
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-electron": "^5.0.0",
+    "grunt-exec": "^1.0.1",
     "grunt-usemin": "^3.1.1",
     "load-grunt-tasks": "^3.5.2",
     "time-grunt": "^1.4.0"
