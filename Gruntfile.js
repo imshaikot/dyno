@@ -72,6 +72,11 @@ module.exports = (grunt) => {
         }
       }
     },
+
+    /**
+     * Grunt:Build Tasks
+     **/
+
     htmlmin: {
       dist: {
         options: {
