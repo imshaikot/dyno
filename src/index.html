@@ -26,6 +26,9 @@
 <script src="components/video.js/dist/video.js" type="text/javascript"></script>
 <!-- endbuild -->
 
-<script src=".tmp/app.js" type="text/javascript"></script>
+<script>
+    require('babel-register');
+    require('./interface/app');
+</script>
 </body>
 </html>

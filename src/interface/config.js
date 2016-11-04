@@ -11,6 +11,7 @@ function config($mdIconProvider, $mdThemingProvider, $stateProvider, $urlRouterP
   $stateProvider.
     state('app', {
       url: '/',
+      controller: 'AppLoaderCtrl',
       templateUrl: 'interface/views/loader.html'
     });
 }

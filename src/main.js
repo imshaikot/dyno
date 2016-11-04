@@ -25,5 +25,11 @@ app.on('ready', function () {
   mainWindow.on('closed', function () {
     mainWindow = null;
   });
-
 });
+
+module.exports = {
+  resize: () => {
+    // mainWindow.setSize(250, 250);
+    alert('Hola World!');
+  }
+};

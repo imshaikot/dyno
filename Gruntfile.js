@@ -53,6 +53,22 @@ module.exports = (grunt) => {
       }
     },
 
+    babel: {
+      options: {
+        sourceMap: false,
+        presets: ['es2015'],
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: `${dir.src}/interface`,
+          src: ['*.js', '**/*.js'],
+          dest: 'src/.tmp/',
+          ext: '.js',
+        }],
+      },
+    },
+
     less: {
       all: {
         options: {},
@@ -201,6 +217,7 @@ module.exports = (grunt) => {
 
   const target = grunt.option('target') || 'debug';
   grunt.registerTask('build', [
+    'babel',
     'clean:dist',
     'copy:node_modules',
     'copy:main',
